@@ -1,39 +1,39 @@
-# Yasir A. Malik — Personal Website
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset=".github/brand/banner-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset=".github/brand/banner-light.png">
+    <img alt="Yasir A. Malik — Audit · Risk · Governance" src=".github/brand/banner-light.png">
+  </picture>
+</p>
 
-Professional website showcasing my work in audit leadership, AI governance, and research.
+# Personal site
 
-## Quick Start
+A static, dependency-free personal site — audit leadership, doctoral
+research on auditor judgment, and AI governance.
 
-1. **Create a GitHub repository** named `YOUR_USERNAME.github.io`
-2. **Upload all files** from this folder to the repository root
-3. **Update placeholder links** in both `index.html` and `books.html`:
-   - Replace `YOUR_ID` with your Google Scholar and Goodreads user IDs
-   - Replace `YOUR_USERNAME` with your GitHub username
-   - Replace `YOUR_PROFILE` with your LinkedIn profile slug
-4. **Optional**: Add a banner image as `img/collage.png` on the books page
-5. **Go live** — GitHub Pages auto-publishes at `https://YOUR_USERNAME.github.io`
+| File | What it is |
+| --- | --- |
+| `index.html` | About |
+| `books.html` | Reading |
+| `style.css` | Layout, structure, and the original type scale |
+| `brand.css` | The Reference Mark identity layer |
 
-## Project Structure
+## Branding
 
-```
-├── index.html      # Landing / About page
-├── books.html      # 15 book recommendations across 5 categories
-├── style.css       # Complete stylesheet (Instrument Serif + DM Sans)
-├── img/            # Image assets folder (add your own)
-└── README.md
-```
+Runs on the shared identity system. Because `style.css` is already
+variable-driven, `brand.css` mostly re-points the site's own custom
+properties — accent to ember `#E0662E`, neutrals to warm graphite and
+paper, display face to Charter — rather than overriding rules.
 
-## Design
+Ember is 3.11:1 on paper, so links and body text use `--color-accent-ink`
+(`#AD4317`), which clears 4.5:1 on every light surface in the system.
 
-- **Fonts**: Instrument Serif (display) + DM Sans (body) via Google Fonts
-- **Icons**: Inline SVGs — no external dependencies
-- **Layout**: 720px max-width, warm paper tones, refined academic aesthetic
-- **Responsive**: Scales cleanly to mobile
+## Known gaps
 
-## Adding Pages
+The Google Scholar and Goodreads links still point at `YOUR_ID`
+placeholders — drop the real profile IDs in and they're live. GitHub and
+LinkedIn are wired up.
 
-To add new pages (Projects, CV, Research), copy the header/nav/footer structure from `index.html` and update the `nav` links across all pages.
+---
 
-## License
-
-MIT
+<sub><b>Yasir A. Malik</b> · Audit · Risk · Governance — <a href="https://malikai-786.github.io">malikai-786.github.io</a> · <a href="https://linkedin.com/in/yasiramalik">LinkedIn</a></sub>

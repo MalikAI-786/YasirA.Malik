@@ -1,0 +1,85 @@
+/* ===================================================================
+   THE REFERENCE MARK — brand layer
+   Yasir A. Malik · Audit · Risk · Governance
+
+   Loaded after style.css. This site is already variable-driven, so the
+   identity mostly arrives by re-pointing its own custom properties onto
+   the shared system rather than overriding rules.
+
+   Ember #E0662E is the anchor colour. It is 3.11:1 on paper, so it never
+   carries body text on a light ground — --color-accent-ink does that.
+   =================================================================== */
+
+:root{
+  color-scheme: light dark;
+
+  --ember-500:#E0662E;
+  --ember-650:#AD4317;
+  --ember-tint:#F58E5C;
+
+  /* re-point the site's own palette */
+  --color-ink:#171A1D;
+  --color-ink-light:#3E464E;
+  --color-ink-muted:#5A646E;
+  --color-paper:#F6F3F0;
+  --color-paper-warm:#EFE9E3;
+  --color-accent:var(--ember-500);
+  --color-accent-ink:var(--ember-650);   /* text and links */
+  --color-accent-hover:var(--ember-650);
+  --color-accent-light:rgba(224,102,46,.09);
+  --color-rule:#E2DAD3;
+  --color-rule-light:#EFE9E3;
+
+  /* Record voice. Charter ships on macOS/iOS; Instrument Serif stays as
+     a fallback so nothing regresses if Charter is absent. */
+  --font-display:"Bitstream Charter",Charter,"Iowan Old Style","Instrument Serif","Palatino Linotype",Palatino,Georgia,serif;
+  --font-body:'DM Sans',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-instrument:ui-monospace,"SF Mono",Menlo,"Cascadia Mono","Roboto Mono",monospace;
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --color-ink:#EDEFF1;
+    --color-ink-light:#CBD3DA;
+    --color-ink-muted:#A6B0BA;
+    --color-paper:#0E1114;
+    --color-paper-warm:#14181C;
+    --color-accent-ink:var(--ember-tint);
+    --color-accent-hover:var(--ember-tint);
+    --color-accent-light:rgba(224,102,46,.14);
+    --color-rule:#263039;
+    --color-rule-light:#1A2027;
+  }
+}
+
+/* An ember rule caps the page, as it does everywhere else in the system. */
+body{border-top:3px solid var(--color-accent);}
+
+/* ---------- masthead ---------- */
+.brand-lockup{display:flex;align-items:center;gap:13px;margin-bottom:6px;}
+.brand-lockup svg{display:block;flex:0 0 auto;}
+.brand-lockup .ring{stroke:var(--color-accent);fill:none;}
+.brand-lockup .node{fill:var(--color-accent);}
+.brand-lockup .letter{stroke:var(--color-ink);}
+.site-name{font-family:var(--font-display);color:var(--color-ink);
+  letter-spacing:-.015em;margin:0;}
+.site-tagline{
+  font-family:var(--font-instrument);font-size:.72rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--color-accent-ink);
+}
+
+/* Links carry the text-safe ember, never the brand ember. */
+a{color:var(--color-accent-ink);text-underline-offset:3px;}
+nav ul li a{font-family:var(--font-instrument);font-size:.72rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--color-ink-muted);}
+nav ul li a:hover,nav ul li a.active{color:var(--color-accent-ink);}
+
+.social-links a svg{fill:var(--color-ink-muted);transition:fill .2s;}
+.social-links a:hover svg{fill:var(--color-accent);}
+
+.divider,hr{border:0;border-top:1px solid var(--color-rule);}
+
+h1,h2,h3,h4{font-family:var(--font-display);letter-spacing:-.015em;
+  color:var(--color-ink);}
+
+:focus-visible{outline:2px solid var(--color-accent);outline-offset:3px;border-radius:2px;}
